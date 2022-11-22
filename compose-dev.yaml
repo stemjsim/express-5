@@ -16,7 +16,7 @@ services:
       #  context: myapp
     restart: always
 
-    container_name: server4
+    container_name: server5
     ports:
       - 3000:3000
     environment:
@@ -30,7 +30,7 @@ services:
   mongodb:
     image: mongo:5.0
     restart: always
-    container_name: mongodb4
+    container_name: mongodb5
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -45,7 +45,7 @@ services:
   mongo-express:
     image: mongo-express:0.54.0
     restart: always
-    container_name: mongo-express4
+    container_name: mongo-express5
     ports:
       - 8081:8081
     environment:
