@@ -1,3 +1,17 @@
+db.createUser(
+  {
+      user: "root",
+      pwd: "example",
+      roles:[
+          {
+              role: "readWrite",
+              db:   "local_library"
+          }
+      ]
+  }
+);
+
+
 let error = false;
 
 let genres = [];
