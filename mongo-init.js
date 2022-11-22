@@ -51,28 +51,28 @@ function bookInstanceCreate(book, imprint, due_back, status) {
 }
 
 let res = [
-    db.book.drop(),
-    db.author.drop(),
-    db.bookinstance.drop(),
-    db.genre.drop(),
+    db.books.drop(),
+    db.authors.drop(),
+    db.bookinstances.drop(),
+    db.genres.drop(),
 
-    db.book.createIndex({ title: 1 }, { unique: true }),
-    db.book.createIndex({ summary: 1 }),
-    db.book.createIndex({ author: 1 }),
-    db.book.createIndex({ isbn: 1 }),
-    db.book.createIndex({ genre: 1 }),
+    db.books.createIndex({ title: 1 }, { unique: true }),
+    db.books.createIndex({ summary: 1 }),
+    db.books.createIndex({ author: 1 }),
+    db.books.createIndex({ isbn: 1 }),
+    db.books.createIndex({ genre: 1 }),
 
-    db.author.createIndex({ first_name: 1 }),
-    db.author.createIndex({ family_name: 1 }),
-    db.author.createIndex({ d_birth: 1 }),
-    db.author.createIndex({ d_death: 1 }),
+    db.authors.createIndex({ first_name: 1 }),
+    db.authors.createIndex({ family_name: 1 }),
+    db.authors.createIndex({ d_birth: 1 }),
+    db.authors.createIndex({ d_death: 1 }),
 
-    db.bookinstance.createIndex({ book: 1 }),
-    db.bookinstance.createIndex({ imprint: 1 }),
-    db.bookinstance.createIndex({ due_back: 1 }),
-    db.bookinstance.createIndex({ status: 1 }),
+    db.bookinstances.createIndex({ book: 1 }),
+    db.bookinstances.createIndex({ imprint: 1 }),
+    db.bookinstances.createIndex({ due_back: 1 }),
+    db.bookinstances.createIndex({ status: 1 }),
 
-    db.genre.createIndex({ name: 1 })
+    db.genres.createIndex({ name: 1 })
 ];
 
 authorCreate("Patrick", "Rothfuss", "1973-06-06", false);
