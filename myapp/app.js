@@ -12,7 +12,7 @@ var app = express();
 
 //Set up mongoose connection
 const mongoose = require('mongoose');
-const mongoDB = 'mongodb://root:example@mongodb:27017/local_library';
+const mongoDB = 'mongodb://mongodb5:27017/local_library';
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoDB, {
   useNewUrlParser: true,
