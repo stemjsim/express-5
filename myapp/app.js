@@ -12,11 +12,15 @@ var app = express();
 
 //Set up mongoose connection
 const mongoose = require('mongoose');
-const mongoDB = 'mongodb://root:example@mongodb:27017';
+const mongoDB = 'mongodb://root:example@mongodb:27017/local_library';
 mongoose.Promise = global.Promise;
 mongoose.connect(mongoDB, {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  auth: {
+    username: "root",
+    password: "example"
+  }
 });
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
